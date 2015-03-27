@@ -31,10 +31,10 @@
 
 /* Set bit number 'bit_number' of an exisiting binary array to '1' */
 #define SET_BIT_HIGH(array, bit_number) \
-    array[((bit_number) / WRD_SZ)] |= (0x01 << (WRD_SZ - (bit_number % WRD_SZ) - 1))
+    array[((bit_number) / WRD_SZ)] |=  (0x01 << (WRD_SZ - (bit_number % WRD_SZ) - 1))
 
 /* Set bit number 'bit_number' of an exisiting binary array to '0' */
 #define SET_BIT_LOW(array, bit_number) \
-    array[((bit_number) / WRD_SZ)] &= (0x01 << (WRD_SZ - (bit_number % WRD_SZ) - 1))
+    array[((bit_number) / WRD_SZ)] &= ~(0x01 << (WRD_SZ - (bit_number % WRD_SZ) - 1))
 
 #endif // __BIT_ARRAY_H__
