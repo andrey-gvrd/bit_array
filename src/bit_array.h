@@ -20,7 +20,7 @@
 
 /* Get bit number 'bit_number' from exisiting binary array */
 #define GET_BIT(array, bit_number) \
-    ((array[((bit_number) / WRD_SZ)] >> (WRD_SZ - (bit_number) - 1)) & 0x01)
+    ((array[((bit_number) / WRD_SZ)] >> (WRD_SZ - (bit_number % WRD_SZ) - 1)) & 0x01)
 
 /* Set bit to '1' if condition is true, otherwise set to '0' */
 #define SET_BIT_COND(array, bit_number, condition)      \
